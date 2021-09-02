@@ -14,7 +14,7 @@ import Fade from '@material-ui/core/Fade';
 import Image from 'next/image'
 import logo from "../public/logo.png"
 import menu from "../public/menu.svg"
-
+import {SEO} from './Helmet'
 
 const HeaderContainer = styled.div`
 width: 90%;
@@ -143,6 +143,7 @@ const Header = () =>{
   };
   return(
     <header>
+      <SEO/>
       <HeaderContainer>
         <LogoDiv
         onClick={()=>redirecting()}
