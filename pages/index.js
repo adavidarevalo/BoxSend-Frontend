@@ -82,7 +82,11 @@ const Container = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-height: 85vh;
+margin-top: 10px;
+height: 80vh;
+@media (max-width: 938px) {
+  height: auto;
+}
 `
 
 
@@ -123,7 +127,7 @@ export default function Home() {
             <Dropzone />
             <CointainerDiv>
               <h2>Share files easily and privately</h2>
-              <p><span>BoxSend</span > It allows you to share files with end-to-end encryption and a file that is deleted after it is downloaded. So you can keep what you share private and make sure your stuff doesn`&apos;`t stay online forever.</p>
+              <p><span>BoxSend</span > It allows you to share files with end-to-end encryption and a file that is deleted after it is downloaded. So you can keep what you share private and make sure your stuff doesn&apos;t stay online forever.</p>
               <Link href="/createAccount">Create an account for more benefits.</Link>
             </CointainerDiv>
           </IndexDiv>
