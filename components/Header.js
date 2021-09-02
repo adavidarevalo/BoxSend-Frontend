@@ -94,6 +94,13 @@ text-align: center;
 }
 `
 
+const MenuContainer = styled.div`
+margin-top: 20px;
+@media (min-width: 600px) {
+  display: none;
+}
+`
+
 //modal
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -149,12 +156,7 @@ const Header = () =>{
           />
 
         </LogoDiv>
-        <div css={css`
-        margin-top: 20px;
-        @media (min-width: 600px) {
-          display: none;
-        }
-        `}>
+        <MenuContainer>
           <Image 
           src={menu}
           alt="Icon Menu"
@@ -162,7 +164,7 @@ const Header = () =>{
           width={22}
           height={22}
           /> 
-        </div>
+        </MenuContainer>
         <Modal
         className={classes.modal}
         open={open}
