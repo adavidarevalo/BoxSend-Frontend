@@ -78,6 +78,13 @@ button{
 }
 `
 
+const Container = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 85vh;
+`
+
 
 export default function Home() {
   const AuthContext = useContext(authContext)
@@ -110,7 +117,7 @@ export default function Home() {
           </LinkContainer>
         ):(
         <>
-        <div>
+        <Container>
           <Alert/>
           <IndexDiv>
             <Dropzone />
@@ -120,7 +127,7 @@ export default function Home() {
               <Link href="/createAccount">Create an account for more benefits.</Link>
             </CointainerDiv>
           </IndexDiv>
-        </div>
+        </Container>
         </>
         )}
       </div>
