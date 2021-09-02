@@ -151,7 +151,7 @@ export default ({link}) =>{
         <DowloadDiv>
           <h2>Download File</h2>
           {file ? (
-          <Link href={`${process.env.backendURL}/api/file/${link.file}`}>
+          <Link href={`https://angry-volhard-95085a.netlify.app/api/file/${link.file}`}>
             {link.file && 
             (<a>Download Here</a>)}
           </Link>
