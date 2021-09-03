@@ -104,6 +104,7 @@ export default ({link}) =>{
   const [formContainer, setFormContainer] = useState(link.password)
 
   const [pass, getPass] = useState("")
+  const [nameFile, setNameFile] = useState("")
 
   
   const validatePass = async(e) =>{
@@ -120,10 +121,12 @@ export default ({link}) =>{
       heavyFile(awswer.data.msg) 
     }
     if(awswer.data.validate){
+      setNameFile(awswer.data.name)
       setFormContainer(false)
     }
   }
   const {file} = link
+
   return(
     <Layout>
       {formContainer? (
@@ -150,12 +153,12 @@ export default ({link}) =>{
       ):(
         <DowloadDiv>
           <h2>Download File</h2>
-          {file ? (
-          <Link href={`https://boxsend.herokuapp.com/api/file/${link.file}`}>
-            {link.file && 
+          {file || nameFile ? (
+          <Link href={`https://boxsend.herokuapp.com/api/file/${file ? file : nameFile}`}>
+            {link.file || nameFile && 
             (<a>Download Here</a>)}
           </Link>
-          ) :(
+          )  :(
             <p>Link Removed</p>
           ) }
         </DowloadDiv>

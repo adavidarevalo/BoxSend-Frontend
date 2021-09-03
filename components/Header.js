@@ -101,6 +101,13 @@ margin-top: 20px;
 }
 `
 
+const NameContainer = styled.p`
+margin-right: 15px;
+span{
+  font-weight: 700;
+}
+`
+
 //modal
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -180,16 +187,7 @@ const Header = () =>{
           <div className={classes.paper}>
             {user ? (
           <>
-            <p
-            css={css`
-                text-align: center;
-                margin-right: 0px;
-            `}
-            >Hi <span
-            css={css`
-            font-weight: 700;
-            `}
-            >{user.name}</span></p>
+            <NameContainer>Hi <span>{user.name}</span></NameContainer>
             <Link href="/login" passHref>
               <CreateAccountB
               onClick={()=>logOut()}
@@ -218,15 +216,7 @@ const Header = () =>{
         <Options>
           {user ? (
           <>
-            <p
-            css={css`
-            margin-right: 15px;
-            `}
-            >Hi <span
-            css={css`
-            font-weight: 700;
-            `}
-            >{user.name}</span></p>
+            <NameContainer>Hi <span>{user.name}</span></NameContainer>
             <Link href="/login" passHref>
               <button
               onClick={()=>logOut()}

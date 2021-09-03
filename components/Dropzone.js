@@ -65,7 +65,22 @@ p{
   font-weight: 700;
 }
 `
-
+const Container = styled.div`
+width: 80% !important;
+margin: 0 auto;
+h2{
+  text-align: center;
+  letter-spacing: 2px;
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+button{
+  width: 100%;
+  margin-bottom: 25px;
+}
+`
 
 const Dropzone = () =>{
   const AppContext = useContext(appContext)
@@ -99,31 +114,18 @@ const Dropzone = () =>{
   return(
     <DropzoneContainer>
       {acceptedFiles.length > 0 ? (
-        <div css={css`
-            width: 80% !important;
-            margin: 0 auto;
-        `}>
-          <h2 css={css`
-            text-align: center;
-            letter-spacing: 2px;
-          `}>Files</h2>
-          <ul css={css`
-          list-style: none;
-          padding: 0;
-          `}>
+        <Container>
+          <h2>Files</h2>
+          <ul>
             {files}
           </ul>
           {authenticated && <DeleteForm/>}
           {loading ? <p>Loading...</p> :(
               <button
               onClick={()=> createLink() }
-              css={css`
-                width: 100% !important;
-                margin-bottom: 25px;
-              `}
               >Create Link</button>
           )}
-        </div>
+        </Container>
       ) : (
       <div {...getRootProps({className: "dropzone"})}>
         <input {...getInputProps()} css={css`

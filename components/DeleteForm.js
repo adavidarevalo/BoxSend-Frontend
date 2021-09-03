@@ -22,6 +22,16 @@ min-height: 72px!important;
 }
 `
 
+const InputPassword = styled.input`
+display: block;
+border-radius: 3px;
+margin-top: 9px;
+border: 1px solid gray;
+width: 100%;
+padding: 7px;
+`
+
+
 const DeleteForm = () =>{
   const [enablePassword, setEnablePassword] = useState(false)
   const AppContext = useContext(appContext)
@@ -47,18 +57,9 @@ const DeleteForm = () =>{
         onChange={()=> setEnablePassword(!enablePassword)}
         />
         {enablePassword && (
-          <input
+          <InputPassword
           type="password"
-          onChange={e=> getPassword(e.target.value)}
-          css={css`
-          display: block;
-          border-radius: 3px;
-          margin-top: 9px;
-          border: 1px solid gray;
-          width: 100%;
-          padding: 7px;
-          `}
-          />
+          onChange={e=> getPassword(e.target.value)}/>
         )}
       </div>
     </Form>

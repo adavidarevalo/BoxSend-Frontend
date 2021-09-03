@@ -53,6 +53,11 @@ a{
 }
 `
 const LinkContainer = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 50vh;
 p{
   font-size: 1.2rem;
   span{
@@ -63,6 +68,7 @@ p{
 }
 button{
   width: 100%;
+  max-width: 300px;
   background: #ff6600;
   border: none;
   padding: 8px;
@@ -113,10 +119,10 @@ export default function Home() {
       `}>
         {url ?(
           <LinkContainer>
-            <p><span>Your Link: </span>{`${process.env.frontendURL}/link/${url}`}</p>
+            <p><span>Your Link: </span>{`https://modest-torvalds-20cdbf.netlify.app/link/${url}`}</p>
             <button
             type="button"
-            onClick={()=> navigator.clipboard.writeText(`${process.env.frontendURL}/link/${url}`)}
+            onClick={()=> navigator.clipboard.writeText(`https://modest-torvalds-20cdbf.netlify.app/link/${url}`)}
             >Copy Link</button>
           </LinkContainer>
         ):(
